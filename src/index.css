@@ -1,0 +1,363 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════
+   NIHON TRAVEL — Liquid Glass Design System
+   Japan Tourism & Tour Booking Website
+   ═══════════════════════════════════════════════════════ */
+
+/* ─── Custom Properties ─── */
+:root {
+  --obsidian: #0A0A0C;
+  --crimson: #E60012;
+  --crimson-dark: #B8000E;
+  --imperial-purple: #5A2D82;
+  --imperial-purple-dark: #3D1D5C;
+  --glass-white: rgba(255, 255, 255, 0.10);
+  --glass-border: rgba(255, 255, 255, 0.20);
+  --glass-hover: rgba(255, 255, 255, 0.15);
+  --text-primary: #FFFFFF;
+  --text-secondary: #D1D1D6;
+  --text-muted: #8E8E93;
+  --glow-red: rgba(230, 0, 18, 0.4);
+  --glow-purple: rgba(90, 45, 130, 0.4);
+}
+
+/* ─── Global Reset & Base ─── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--obsidian);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ─── Scrollbar Styling ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ─── Typography ─── */
+.font-display {
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+/* ─── Liquid Glass Base Classes ─── */
+.glass {
+  background: var(--glass-white);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-heavy {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ─── Liquid Buttons ─── */
+.btn-liquid-red {
+  position: relative;
+  background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 20px rgba(230, 0, 18, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-liquid-red::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.btn-liquid-red:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 30px rgba(230, 0, 18, 0.5),
+              0 0 60px rgba(230, 0, 18, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-liquid-red:hover::before {
+  left: 100%;
+}
+
+.btn-liquid-purple {
+  position: relative;
+  background: linear-gradient(135deg, var(--imperial-purple) 0%, var(--imperial-purple-dark) 100%);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 20px rgba(90, 45, 130, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-liquid-purple::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.btn-liquid-purple:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 30px rgba(90, 45, 130, 0.5),
+              0 0 60px rgba(90, 45, 130, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-liquid-purple:hover::before {
+  left: 100%;
+}
+
+/* ─── Glass Input Fields ─── */
+.glass-input {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: white;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.glass-input:focus {
+  border-color: rgba(230, 0, 18, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 20px rgba(230, 0, 18, 0.15);
+}
+
+.glass-input option {
+  background: #1a1a2e;
+  color: white;
+}
+
+/* ─── Ambient Background Animations ─── */
+@keyframes float-bubble {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(30px, -40px) scale(1.1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-20px, -80px) scale(0.9);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(40px, -40px) scale(1.05);
+    opacity: 0.35;
+  }
+}
+
+@keyframes float-kanji {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.03;
+  }
+  50% {
+    transform: translateY(-60px) rotate(5deg);
+    opacity: 0.06;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.03;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    filter: blur(60px);
+  }
+  50% {
+    opacity: 0.6;
+    filter: blur(80px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* ─── Ambient Gradient Orbs ─── */
+.ambient-orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-orb-purple {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(90, 45, 130, 0.15) 0%, transparent 70%);
+  top: -200px;
+  right: -200px;
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+
+.ambient-orb-red {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(230, 0, 18, 0.1) 0%, transparent 70%);
+  bottom: -150px;
+  left: -150px;
+  animation: pulse-glow 10s ease-in-out infinite 2s;
+}
+
+.ambient-orb-purple-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(90, 45, 130, 0.08) 0%, transparent 70%);
+  top: 50%;
+  left: 30%;
+  animation: pulse-glow 12s ease-in-out infinite 4s;
+}
+
+/* ─── Section Styling ─── */
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-top: 0.75rem;
+}
+
+/* ─── Card Glow Effects ─── */
+.card-glow-hover {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.card-glow-hover:hover {
+  box-shadow: 0 8px 40px rgba(90, 45, 130, 0.2),
+              0 4px 20px rgba(230, 0, 18, 0.1);
+  transform: translateY(-4px);
+}
+
+/* ─── Gradient Text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #D1D1D6 50%, #FFFFFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-red {
+  background: linear-gradient(135deg, var(--crimson) 0%, #FF4D5E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(230, 0, 18, 0.3);
+  color: white;
+}
+
+/* ─── Responsive Utilities ─── */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+}
