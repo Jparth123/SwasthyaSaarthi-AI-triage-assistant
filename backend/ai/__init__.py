@@ -1,0 +1,3 @@
+"""
+SwasthyaSaarthi — AI Module Init
+"""
